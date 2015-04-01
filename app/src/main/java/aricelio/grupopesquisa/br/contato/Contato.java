@@ -28,7 +28,7 @@ public class Contato extends ActionBarActivity {
 
         // Concatena os dados das EditTexts em uma string
         String str = edNome.getText().toString() + " - " + edTelefone.getText().toString() + " - "
-                + edEmail.getText().toString();
+                + edEmail.getText().toString() + "TEste do Hélder";
 
         // Mostra uma mensagem na tela com o Toast
         Toast toast = Toast.makeText(this, str, Toast.LENGTH_LONG);
