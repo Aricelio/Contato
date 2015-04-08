@@ -1,5 +1,6 @@
 package aricelio.grupopesquisa.br.contato;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,7 +11,7 @@ import android.widget.Toast;
 
 import aricelio.grupopesquisa.br.DataAccess.PessoaDAO;
 import aricelio.grupopesquisa.br.DomainModel.Pessoa;
-import aricelio.grupopesquisa.br.pessoa.R;
+import aricelio.grupopesquisa.br.contato.R;
 
 
 public class Contato extends ActionBarActivity {
@@ -43,6 +44,12 @@ public class Contato extends ActionBarActivity {
         // Mostra uma mensagem na tela com o Toast
         Toast toast = Toast.makeText(this, "Contato Salvo com Sucesso!", Toast.LENGTH_LONG);
         toast.show();
+    }
+
+    // Método que abre a tela de listagem de contatos...............................................
+    public void AbrirListaContatos(View v){
+        Intent intent = new Intent(Contato.this, ListaContatos.class);
+        Contato.this.startActivity(intent);
     }
 
 

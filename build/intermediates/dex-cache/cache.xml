@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/home/aricelio/AndroidStudioProjects/Contato/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/home/aricelio/AndroidStudioProjects/Contato/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b836082afe50b3cd2a7d133ed121758095ddf046.jar" />
-    </item>
-    <item
         jar="/home/aricelio/AndroidStudioProjects/Contato/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -21,6 +14,13 @@
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
         <dex dex="/home/aricelio/AndroidStudioProjects/Contato/app/build/intermediates/pre-dexed/debug/classes-a324a8d52de1040316ed87ea0649baf0b0491063.jar" />
+    </item>
+    <item
+        jar="/home/aricelio/AndroidStudioProjects/Contato/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/aricelio/AndroidStudioProjects/Contato/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-b836082afe50b3cd2a7d133ed121758095ddf046.jar" />
     </item>
     <item
         jar="/usr/share/android-studio/data/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
