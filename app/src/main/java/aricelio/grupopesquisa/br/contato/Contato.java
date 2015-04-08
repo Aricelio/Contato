@@ -38,8 +38,6 @@ public class Contato extends ActionBarActivity {
         pessoa.setTelefone( Integer.parseInt( edTelefone.getText().toString()) );
 
         pessoaDAO.inserir(pessoa);
-
-
         // Mostra uma mensagem na tela com o Toast
         Toast toast = Toast.makeText(this, "Contato Salvo com Sucesso!", Toast.LENGTH_LONG);
         toast.show();
