@@ -52,5 +52,17 @@
         android:id="@+id/btnSalvar"
         android:onClick="Salvar"
         android:layout_below="@+id/edtEmail"
+        android:layout_alignLeft="@+id/btnListarContatos"
+        android:layout_alignStart="@+id/btnListarContatos"
+        android:layout_alignRight="@+id/btnListarContatos"
+        android:layout_alignEnd="@+id/btnListarContatos" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Listar Contatos"
+        android:id="@+id/btnListarContatos"
+        android:onClick="AbrirListaContatos"
+        android:layout_below="@+id/btnSalvar"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
