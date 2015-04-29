@@ -2,8 +2,11 @@ package aricelio.grupopesquisa.br.contato;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -42,6 +45,7 @@ public class ListaContatos extends ActionBarActivity {
 
         // Associacao do Adapter a ListView
         this.mListView.setAdapter(adapter);
+        registerForContextMenu(this.mListView);
     }
 
     // .......................................................................
@@ -61,6 +65,17 @@ public class ListaContatos extends ActionBarActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_lista_contatos, menu);
         return true;
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        if (v.getId()==R.id.lvListaContatos) {
+            AdapterView.AdapterContextMenuInfo info =
+                    (AdapterView.AdapterContextMenuInfo)menuInfo;
+            Pessoa pessoa = this.listaPessoas.get(info.position);
+            menu.setHeaderTitle(pessoa.getNome());
+        }
     }
 
     // Método onOptionsItemSelected.................................................................

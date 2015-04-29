@@ -1,6 +1,9 @@
 package aricelio.grupopesquisa.br.contato;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,7 +27,7 @@ public class Contato extends ActionBarActivity {
     }
 
     // Método Salvar................................................................................
-    public void Salvar(View view){
+    public void Salvar(View view) {
 
         Pessoa pessoa = new Pessoa();
         PessoaDAO pessoaDAO = new PessoaDAO(this);
@@ -34,16 +37,32 @@ public class Contato extends ActionBarActivity {
         EditText edTelefone = (EditText) findViewById(R.id.edtTelefone);
         EditText edEmail = (EditText) findViewById(R.id.edtEmail);
 
-        pessoa.setNome( edNome.getText().toString() );
-        pessoa.setEmail( edEmail.getText().toString() );
-        pessoa.setTelefone( Integer.parseInt( edTelefone.getText().toString()) );
+        pessoa.setNome(edNome.getText().toString());
+        pessoa.setEmail(edEmail.getText().toString());
+        pessoa.setTelefone(Integer.parseInt(edTelefone.getText().toString()));
 
         pessoaDAO.inserir(pessoa);
         // Mostra uma mensagem na tela com o Toast
-        Toast toast = Toast.makeText(this, "Contato Salvo com Sucesso!", Toast.LENGTH_LONG);
-        toast.show();
-    }
+        /*Toast toast = Toast.makeText(this, "Contato Salvo com Sucesso!", Toast.LENGTH_LONG);
+        toast.show();*/
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Contato salvo com sucesso!")
+                .setTitle("Cadastro de Contato");
+        builder.setPositiveButton("Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        edEmail.setText("");
+        edNome.setText("");
+        edTelefone.setText("");
+        edTelefone.setBackgroundColor(Color.LTGRAY);
+    }
     // Método que abre a tela de listagem de contatos...............................................
     public void AbrirListaContatos(View v){
         Intent intent = new Intent(Contato.this, ListaContatos.class);
